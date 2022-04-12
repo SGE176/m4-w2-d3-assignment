@@ -1,0 +1,19 @@
+extends layout
+
+block content
+
+    if registrations.length
+        table.table.listing-table.table-bordered
+            tr.thead-dark
+                th Name
+                th Email
+                th Username 
+                th Password
+            each registration in registrations
+                tr
+                    td= registration.name
+                    td= registration.email
+                    td= registration.username
+                    td= registration.password
+    else
+        p No registrations yet :(
